@@ -19,6 +19,8 @@ public class Main {
         long recored_number= 10000000000001L;
         long increment_recored_number= 1L;
 
+
+
         try (FileInputStream fis = new FileInputStream(new File(xlsxFilePath));
              Workbook workbook = new XSSFWorkbook(fis)) {
 
@@ -35,7 +37,7 @@ public class Main {
                 Row row = sheet.getRow(i);
                 if (row == null) continue;
 
-                if(getCellValueAsString(row.getCell(11)).equals("advance"))
+                if(getCellValueAsString(row.getCell(11)).equals("advance") || getCellValueAsString(row.getCell(10)).equals("cli"))
                     continue;
 
                 ObjectNode result_state = objectMapper.createObjectNode();
