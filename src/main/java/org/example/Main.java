@@ -71,7 +71,12 @@ public class Main {
                     result_context_conditions.add(result_context_condition_state);
                 }
                 // addIfNotEmpty(result_context_conditions,result_context_condition_state);
+
                 result_context_state.set("rule.conditions",result_context_conditions);
+
+                if(result_context_conditions.isEmpty()){
+                    continue;
+                }
 
 
                 result_state.set("rule.context", result_context_state);
